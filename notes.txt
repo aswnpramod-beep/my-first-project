@@ -1,1 +1,1 @@
-this is my simple note page for my project
+"Triggering my first CI/CD pipeline!"
