@@ -10,7 +10,7 @@ pipeline {
         stage('Download Code') {
             steps {
                 // Replace this URL with your actual GitHub repo URL
-                git branch: 'main', url: 'https://github.com/yourusername/your-repo-name.git'
+                git branch: 'main', url: 'https://github.com/aswnpramod-beep/my-first-project.git'
             }
         }
         
@@ -21,5 +21,5 @@ pipeline {
             }
         }
     }
-}
+'}
 
