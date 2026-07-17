@@ -1,26 +1,25 @@
 pipeline {
     agent any
     
+    // This replaces the "GitHub hook trigger" checkbox
+    triggers {
+        githubPush()
+    }
+    
     stages {
-        stage('Build') {
+        stage('Download Code') {
             steps {
-                echo 'Building the application...'
-                // Commands to compile or bundle code go here
+                // Replace this URL with your actual GitHub repo URL
+                git branch: 'main', url: 'https://github.com/yourusername/your-repo-name.git'
             }
         }
-        stage('Test') {
+        
+        stage('Deploy Website') {
             steps {
-                echo 'Running automated tests...'
-                // If these commands fail, deployment is canceled, ensuring reliability
-                sh 'echo "Tests passed!"' 
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying to live environment...'
-                // Commands to copy files, restart services, or push to cloud
-                sh 'echo "Successfully deployed Version 1.0"'
+                // This replaces your Execute Shell box
+                sh 'cp index.html /var/www/html/'
             }
         }
     }
 }
+
